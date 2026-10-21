@@ -1,0 +1,27 @@
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: devops-web
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: devops-web
+  template:
+    metadata:
+      labels:
+        app: devops-web
+    spec:
+      containers:
+        - name: devops-web
+          image: 325355907175.dkr.ecr.ap-south-1.amazonaws.com/devops-web:v1
+          ports:
+            - containerPort: 80
+          resources:
+            requests:
+              cpu: "100m"
+              memory: "64Mi"
+            limits:
+              cpu: "250m"
+              memory: "128Mi"
