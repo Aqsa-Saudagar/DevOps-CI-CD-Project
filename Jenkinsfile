@@ -18,7 +18,7 @@ pipeline {
 
         stage('Verify Docker Image') {
             steps {
-                sh 'sudo docker images devops-web'
+                sh 'docker images devops-web'
             }
         }
     }
